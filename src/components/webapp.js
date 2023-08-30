@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { WebView } from 'react-native-webview';
 
- 
+
+
+
+const localhostURL = process.env.REACT_URL;
+
 const WebApp = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +21,7 @@ const WebApp = () => {
        <View style={styles.container}>
        {isLoading && <ActivityIndicator size="large" style={styles.loadingIndicator} />}
        <WebView
-         source={{ uri: 'https://usama3030.github.io/uPortfolio/' }}
+       source={{ uri: localhostURL }}
          style={styles.webview}
          onLoadEnd={handleLoadEnd}
        />

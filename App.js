@@ -10,7 +10,7 @@ import WebProfile from './src/components/Webprofile';
 const Stack = createStackNavigator();
 
 const App = () => {
-  console.log("App Executed")
+  console.log("App Executed");
   return (
 
 <NavigationContainer>
