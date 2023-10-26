@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, ActivityIndicator } from "react-native";
 import { WebView } from "react-native-webview";
+import {API_URL} from '@env';
 
-//const localhostURL = process.env.REACT_URL;
 
 const WebApp = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,6 +10,7 @@ const WebApp = () => {
   const handleLoadEnd = () => {
     setIsLoading(false);
   };
+  console.log(API_URL)
 
   return (
     <View style={styles.container}>
@@ -17,7 +18,8 @@ const WebApp = () => {
         <ActivityIndicator size="large" style={styles.loadingIndicator} />
       )}
       <WebView
-        source={{ uri: "http://192.168.18.42:3000/list" }}
+        //source={{ uri: `${API_URL}` }}
+        source={{ uri: "http://localhost:3000" }}
         style={styles.webview}
         onLoadEnd={handleLoadEnd}
         javaScriptEnabled={true}

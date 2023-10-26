@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, ActivityIndicator } from "react-native";
 import { WebView } from "react-native-webview";
+import {YT_URL} from '@env';
 
 const WebProfile = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -8,6 +9,7 @@ const WebProfile = () => {
   const handleLoadEnd = () => {
     setIsLoading(false);
   };
+  console.log(YT_URL)
 
   return (
     <View style={styles.container}>
@@ -16,7 +18,8 @@ const WebProfile = () => {
       )}
       <WebView
         //  source={{ uri: 'https://usama3030.github.io/Portfolio/' }}
-        source={{ uri: "https://www.youtube.com/" }}
+        // source={{ uri: "https://www.youtube.com/" }}
+        source={{ uri: `${YT_URL}` }}
         style={styles.webview}
         onLoadEnd={handleLoadEnd}
       />
@@ -45,3 +48,4 @@ const styles = StyleSheet.create({
 });
 
 export default WebProfile;
+
