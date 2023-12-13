@@ -4,8 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { View, StyleSheet, StatusBar } from 'react-native';
 import { globalStyles } from './src/styles/globalStyles';
 import HomeScreen from './src/screens/homeScreen';
-import WebApp from './src/components/webapp';
-import WebProfile from './src/components/Webprofile';
 
 const Stack = createStackNavigator();
 
@@ -15,9 +13,7 @@ const App = () => {
 
 <NavigationContainer>
 <Stack.Navigator initialRouteName="Home">
-  <Stack.Screen name="Home" component={HomeScreen} />
-  <Stack.Screen name="React Profile" component={WebApp} />
-  <Stack.Screen name="Elegant Profile" component={WebProfile} />
+  <Stack.Screen name="Fire Guard" component={HomeScreen} />
 </Stack.Navigator>
 </NavigationContainer>
 
